@@ -5,7 +5,7 @@ WORKDIR /go/src/app
 
 COPY . /go/src/app
 
-RUN go build -o httprobe main.go
+RUN go build -o httproby main.go
 
 
 FROM alpine:3.9
