@@ -1,0 +1,19 @@
+name: Go
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build
+      run: go build -o httproby ./cmd/httproby
+    - name: Release
+      uses: actions/upload-artifact@v2
+      with:
+        name: httproby
+        path: httproby
